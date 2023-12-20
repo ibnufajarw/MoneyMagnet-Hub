@@ -22,4 +22,4 @@ Untuk panduan lengkap penggunaan Moneymagnet Hub, silakan lihat [Dokumentasi Pen
 Kami mengundang kontribusi dari komunitas. Jika Anda ingin berkontribusi pada pengembangan Moneymagnet Hub, silakan lihat [Panduan Kontribusi](link_ke_panduan_kontribusi).
 
 ## Lisensi
-Proyek ini dilisensikan di bawah [Lisensi MIT](link_ke_lisensi).
+Proyek ini dilisensikan di bawah [GPL-3.0](https://opensource.org/licenses/GPL-3.0).
