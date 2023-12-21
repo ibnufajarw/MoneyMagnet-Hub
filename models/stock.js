@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
 	}
 	Stock.init(
 		{
-			stockAbbreviation: {
+			stockAbbrevation: {
 				type: DataTypes.STRING,
 				allowNull: false,
 			},
