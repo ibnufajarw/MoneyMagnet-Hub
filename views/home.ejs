@@ -1,0 +1,45 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HOME</title>
+	</head>
+	<body>
+		<nav>
+			<h1>HOME</h1>
+		</nav>
+		<div>
+			<h2>MarketCap</h2>
+			<p>CurrentPrice X 100 = Ex: Rp. xxx /100 Lembar</p>
+		</div>
+		<div>
+			<table border="1">
+				<thead>
+					<tr>
+						<th>Stocks</th>
+						<th>Companies</th>
+						<th>Current Price</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% stocks.forEach(each => { %>
+					<tr>
+						<td><%= each.stockAbbrevation %></td>
+						<td><%= each.companyName %></td>
+						<td><%= each.currentPrice %></td>
+						<td>
+							<form action="/stocks/<%= each.id %>" method="get">
+								<button type="submit">Show Details</button>
+							</form>
+						</td>
+					</tr>
+					<% }); %>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

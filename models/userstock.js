@@ -5,8 +5,8 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class UserStock extends Model {
     static associate(models) {
-      UserStock.hasMany(models.User);
-      UserStock.hasMany(models.Stock);
+      // UserStock.hasMany(models.User);
+      // UserStock.hasMany(models.Stock);
     }
   }
   UserStock.init({
