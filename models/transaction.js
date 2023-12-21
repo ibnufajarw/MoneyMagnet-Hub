@@ -11,10 +11,30 @@ module.exports = (sequelize, DataTypes) => {
 	}
 	Transaction.init(
 		{
-			type: DataTypes.STRING,
-			amount: DataTypes.INTEGER,
-			quantity: DataTypes.INTEGER,
-			date: DataTypes.DATE,
+			type: {
+				type: DataTypes.STRING,
+				allowNull: false,
+			},
+			amount: {
+				type: DataTypes.INTEGER,
+				allowNull: false,
+				validate: {
+					isInt: true,
+					min: 1,
+				},
+			},
+			quantity: {
+				type: DataTypes.INTEGER,
+				allowNull: false,
+				validate: {
+					isInt: true,
+					min: 1,
+				},
+			},
+			date: {
+				type: DataTypes.DATE,
+				allowNull: false,
+			},
 			UserId: DataTypes.INTEGER,
 			StockId: DataTypes.INTEGER,
 		},

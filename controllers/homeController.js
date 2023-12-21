@@ -5,28 +5,27 @@ const { Stock, Transaction } = require("../models");
 class homeController {
 	static async getAllStocks(req, res) {
 		try {
-			// console.log("stocks");
 			const stocks = await Stock.findAll();
+			// console.log(stocks);
 			res.render("home", { stocks });
 		} catch (error) {
 			res.status(500).render({ error: "Internal Server Error" });
 		}
 	}
-	static async detail(req, res){
+	static async detail(req, res) {
+		const { id } = req.params;
 		try {
-			const { id } = req.params;
+			const all = await Stock.findAll();
 			const stock = await Stock.findByPk(id, {
 				include: {
-					model: Transaction
-				}
+					model: Transaction,
+				},
 			});
-			console.log(stock);
-			res.render('stockDetail', { stock });
+			res.render("stockDetail", { stock, all });
 		} catch (error) {
-			console.error(error);
 			res.send(error.message);
 		}
-    }
+	}
 }
 
 module.exports = homeController;

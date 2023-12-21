@@ -14,10 +14,30 @@ module.exports = (sequelize, DataTypes) => {
 	}
 	Stock.init(
 		{
-			stockAbbrevation: DataTypes.STRING,
-			companyName: DataTypes.STRING,
-			currentPrice: DataTypes.DECIMAL,
-			marketCap: DataTypes.DECIMAL,
+			stockAbbrevation: {
+				type: DataTypes.STRING,
+				allowNull: false,
+			},
+			companyName: {
+				type: DataTypes.STRING,
+				allowNull: false,
+			},
+			currentPrice: {
+				type: DataTypes.DECIMAL,
+				allowNull: false,
+				validate: {
+					isDecimal: true,
+					min: 0,
+				},
+			},
+			marketCap: {
+				type: DataTypes.DECIMAL,
+				allowNull: false,
+				validate: {
+					isDecimal: true,
+					min: 0,
+				},
+			},
 		},
 		{
 			sequelize,
