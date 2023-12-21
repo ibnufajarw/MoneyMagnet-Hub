@@ -2,7 +2,7 @@
 
 const express = require("express");
 const router = express.Router();
-const HomeRoutes = require("./userRoutes");
+const HomeRoutes = require("./homeRoutes");
 
 router.get("/", (req, res) => {
 	res.redirect("/stocks");
