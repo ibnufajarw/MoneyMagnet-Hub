@@ -6,6 +6,6 @@ const HomeController = require("../controllers/homeController");
 const router = express.Router();
 
 router.get("/", HomeController.getAllStocks);
-// router.post("/transactions", UserController.addTransaction);
+// router.get("/stocks/:id");
 
 module.exports = router;
