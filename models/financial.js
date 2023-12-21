@@ -13,10 +13,18 @@ module.exports = (sequelize, DataTypes) => {
 			totalInvestment: {
 				type: DataTypes.DECIMAL,
 				allowNull: true,
+				validate: {
+					isDecimal: true,
+					min: 0,
+				},
 			},
 			cashBalance: {
 				type: DataTypes.DECIMAL,
 				allowNull: true,
+				validate: {
+					isDecimal: true,
+					min: 0,
+				},
 			},
 			UserId: DataTypes.INTEGER,
 		},
