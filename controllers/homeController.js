@@ -13,19 +13,19 @@ class homeController {
 		}
 	}
 	static async detail(req, res){
-        const { id } = req.params
-        try {
-			const all = await Stock.findAll();
-            const stock = await Stock.findByPk(id, {
-                include: {
-                    model: Transaction
-                    
-                }
-            })
-            res.render('stockDetail', { stock, all})
-        } catch (error) {
-            res.send(error.message)
-        }
+		try {
+			const { id } = req.params;
+			const stock = await Stock.findByPk(id, {
+				include: {
+					model: Transaction
+				}
+			});
+			console.log(stock);
+			res.render('stockDetail', { stock });
+		} catch (error) {
+			console.error(error);
+			res.send(error.message);
+		}
     }
 }
 
