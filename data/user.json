@@ -1,0 +1,13 @@
+[{
+    "id": 1,
+    "name": "admin",
+    "email": "admin@gmail.com",
+    "password": "admin123",
+    "role": "admin"
+  }, {
+    "id": 2,
+    "name": "Jerry Vasilik",
+    "email": "jvasilik1@furl.net",
+    "password": "oI6'o|9Pkiq1kn",
+    "role": "user"
+  }]
