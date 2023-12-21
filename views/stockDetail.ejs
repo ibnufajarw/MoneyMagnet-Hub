@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Stock</title>
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <a href="/">Moneymagnet Hub</a>
+        </div>
+    </nav>
+    <% all.forEach(each => { %>
+    <div class="top">
+        <div class="img"></div>
+        <div class="description">
+            <p class="name"><%= each.stockAbbrevation %></p>
+            <p class="company"><%= each.companyName %></p>
+            <p class="about"></p>
+        </div>
+        <p class="price"></p>
+    </div>
+    <% }); %>
+</body>
+</html>

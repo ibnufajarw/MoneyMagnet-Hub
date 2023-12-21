@@ -2,12 +2,10 @@
 
 const express = require("express");
 const HomeController = require("../controllers/homeController");
-
+const homeController = require("../controllers/homeController");
 const router = express.Router();
 
 router.get("/", HomeController.getAllStocks);
-// router.get("/stocks/:id");
-// router.get("/stocks/add");
-// router.post("/stocks/add");
+router.get("/:id", homeController.detail);
 
 module.exports = router;

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADd new stock</title>
+</head>
+<body>
+    <nav>
+            <a href="/">Moneymagnet Hub</a>
+            <a href="/">Home</a>
+    </nav>
+
+        <h1 style="font-family: Arial, Helvetica, sans-serif;">Create New Stock</h1>
+        <h4 style="font-family: Arial, Helvetica, sans-serif;">Please filled the form below to add a new stock!</h4>
+        <form action="/add" method="POST">
+        <p>Stock Abbrevation: </p>
+        <input type="text" name="stockAbbrevation" />
+        <p>Company Name: </p>
+        <input type="text" name="companyName" />
+        <p>Current: </p>
+        <input type="text" name="currentPrice" />
+        <p>Marke Cap: </p>
+        <input type="text" name="marketCap" />
+        
+        <p>
+            <input type="submit" value="Add New Stock" />
+        </p>
+        </form>
+</body>
+</html>
