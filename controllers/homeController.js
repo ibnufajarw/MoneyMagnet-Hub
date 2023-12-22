@@ -6,24 +6,27 @@ class homeController {
 	static async getAllStocks(req, res) {
 		try {
 			const stocks = await Stock.findAll();
-			// console.log(stocks);
-			res.render("home", { stocks });
+			const topThree = await Stock.findAll({
+				order: [["currentPrice", "DESC"]],
+				limit: 3,
+			});
+			res.render("home", { stocks, topThree });
 		} catch (error) {
 			res.status(500).render({ error: "Internal Server Error" });
 		}
 	}
 	static async detail(req, res) {
-		const { id } = req.params;
+		const { id } = req.params.id;
 		try {
-			const all = await Stock.findAll();
-			const stock = await Stock.findByPk(id, {
+			const stocks = await Stock.findByPk(id, {
 				include: {
 					model: Transaction,
 				},
 			});
-			res.render("stockDetail", { stock, all });
+			// console.log(stocks);
+			res.render("stockDetail", { stocks });
 		} catch (error) {
-			res.send(error.message);
+			res.status(500).render({ error: "Internal Server Error" });
 		}
 	}
 }
