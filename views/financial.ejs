@@ -1,0 +1,19 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<nav>
+			<div class="left">
+				<a href="/" class="text-white">Moneymagnet Hub</a>
+			</div>
+		</nav>
+	</head>
+	<body>
+		<h1>Financials</h1>
+		<div>
+			<h3>Balance: <%= formatCurrency(userFinancial.cashBalance) %></h3>
+			<h3>Total Investment: <%= formatCurrency(userFinancial.totalInvestment) %></h3>
+		</div>
+	</body>
+</html>

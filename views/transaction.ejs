@@ -1,0 +1,42 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<nav>
+			<div class="left">
+				<a href="/" class="text-white">Moneymagnet Hub</a>
+			</div>
+		</nav>
+	</head>
+	<body>
+		<div>
+			<h2>Your Stocks</h2>
+			<ul>
+				<% userStocks.forEach((each) => { %>
+				<li>
+					<%= each.Stock.stockAbbrevation %> - <%= each.Stock.companyName %> |
+					Quantity: <%= each.quantity %> |
+					<a href="/transaction/sell/<%= each.Stock.id %>">Sell</a>
+				</li>
+				<% }); %>
+			</ul>
+		</div>
+		<div>
+			<h2>Available Stocks</h2>
+			<ul>
+				<% stocks.forEach((stock) => { %>
+				<li>
+					<%= stock.stockAbbrevation %> - <%= stock.companyName %> | Current
+					Price: <%= stock.currentPrice %> |
+					<form method="post" action="/transaction/buy/<%= stock.id %>">
+						<label for="buyQuantity">Quantity:</label>
+						<input type="number" name="buyQuantity" required />
+						<button type="submit">Buy</button>
+					</form>
+				</li>
+				<% }); %>
+			</ul>
+		</div>
+	</body>
+</html>
