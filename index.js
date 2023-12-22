@@ -5,6 +5,7 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const path = require("path");
 const routes = require("./routes");
+const formatCurrency = require("./helpers/currencyFormatter");
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(
 		cookie: { secure: false, sameSite: true },
 	})
 );
+app.locals.formatCurrency = formatCurrency;
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
